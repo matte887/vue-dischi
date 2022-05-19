@@ -20,10 +20,4 @@ export default {
 <style lang="scss">
 @import "./style/common.scss";
 
-main {
-  width: 100%;
-  height: 100vh;
-  background-color: #1e2d3b;
-}
-
 </style>

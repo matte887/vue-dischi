@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="row row-cols-2 row-cols-md-4">
+    <div class="row row-cols-2 row-cols-md-5 g-5 my-5">
       <MyAlbum v-for="item in albums" :key="item.index" :albumData="item"/>
 
     </div>
@@ -26,11 +26,11 @@ export default {
       .get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((resp) => {
         this.albums = resp.data.response;
-        console.log(this.albums);
       });
     },
 };
 </script>
 
 <style lang="scss" scoped>
+
 </style>
