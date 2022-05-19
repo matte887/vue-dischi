@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       albums: [],
-      loading: true
+      loading: true,
     };
   },
   created() {
