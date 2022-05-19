@@ -1,11 +1,11 @@
 <template>
   <div class="col">
-    <div class="my-card text-center pt-5 pb-5">
+    <div class="my-card text-center py-4">
       <img
         :src="albumData.poster"
         alt=""
       />
-      <h2 class="py-3">{{albumData.title}}</h2>
+      <h3 class="py-3 text-uppercase">{{albumData.title}}</h3>
       <span class="text-secondary">{{albumData.author}}</span>
       <span class="text-secondary">{{albumData.year}}</span>
     </div>
