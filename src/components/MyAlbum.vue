@@ -1,17 +1,22 @@
 <template>
   <div class="my-card text-center pt-5 pb-5">
     <img
-      src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg"
+      :src="albumData.poster"
       alt=""
     />
-    <h2 class="py-3">New Jersey</h2>
-    <span class="text-secondary">Bon Jovi</span>
-    <span class="text-secondary">1988</span>
+    <h2 class="py-3">{{albumData.title}}</h2>
+    <span class="text-secondary">{{albumData.author}}</span>
+    <span class="text-secondary">{{albumData.year}}</span>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+    name: "MyAlbum",
+    props: {
+        albumData: Object
+    }
+};
 </script>
 
 <style lang="scss" scoped>
