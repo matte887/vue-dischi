@@ -1,8 +1,14 @@
 <template>
   <div class="container">
-    <MySelection @selectedGenre="pickSelectedGenre($event)" @selectedArtist="pickSelectedArtist($event)"/>
+    <MySelection
+      @selectedGenre="pickSelectedGenre($event)"
+      @selectedArtist="pickSelectedArtist($event)"
+    />
     <MyLoadingPage v-if="loading" />
-    <div v-else class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-5 my-5">
+    <div
+      v-else
+      class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-5 my-5"
+    >
       <MyAlbum v-for="item in filterBy" :key="item.index" :albumData="item" />
     </div>
   </div>
@@ -28,7 +34,7 @@ export default {
       albums: [],
       loading: true,
       filterGenre: "",
-      filterArtist: ""
+      filterArtist: "",
     };
   },
 
@@ -38,21 +44,22 @@ export default {
     },
     pickSelectedArtist(artistSelection) {
       this.filterArtist = artistSelection;
-    }
+    },
   },
 
   computed: {
     filterBy() {
       if (this.filterGenre || this.filterArtist) {
         return this.albums.filter((item) => {
-          return item.genre.toLowerCase().includes(this.filterGenre.toLowerCase()) && 
-          item.author.toLowerCase().includes(this.filterArtist.toLowerCase());
+          return (
+            item.genre.toLowerCase().includes(this.filterGenre.toLowerCase()) &&
+            item.author.toLowerCase().includes(this.filterArtist.toLowerCase())
+          );
         });
+      } else {
+        return this.albums;
       }
-
-       return this.albums;
-
-    }
+    },
   },
 
   created() {
