@@ -9,10 +9,7 @@
     >
       <!-- <option disabled value="">Choose a genre</option> -->
       <option value=""></option>
-      <option value="rock">Rock</option>
-      <option value="pop">Pop</option>
-      <option value="jazz">Jazz</option>
-      <option value="metal">Metal</option>
+      <option v-for="(item, index) in albumData" :key="index" :value="item.genre">{{item.genre}}</option>
     </select>
 
     <label for="selectArtist" class="me-3">Filtra per artista</label>
@@ -31,6 +28,9 @@
 <script>
 export default {
   name: "MySelection",
+  props: {
+      albumData: Array
+  },
   data() {
     return {
       genreSelection: "",

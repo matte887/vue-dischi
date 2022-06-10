@@ -3,6 +3,7 @@
     <MySelection
       @selectedGenre="pickSelectedGenre($event)"
       @selectedArtist="pickSelectedArtist($event)"
+      :albumData="albums"
     />
     <MyLoadingPage v-if="loading" />
     <div
