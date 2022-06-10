@@ -20,7 +20,7 @@
       @change="$emit('selectedArtist', artistSelection)"
     >
       <option value=""></option>
-      <option value="Bon Jovi">Bon Jovi</option>
+      <option v-for="(item, index) in albumData" :key="index" :value="item.author">{{item.author}}</option>
     </select>
   </form>
 </template>
